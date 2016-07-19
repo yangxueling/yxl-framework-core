@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+            http://www.springframework.org/schema/context    
+            http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+     
+	<!-- 自動掃描納入spring管理的類，除開spring控制器，如果和控制器一起扫描，事物可能会失效 -->
+	<context:component-scan base-package="com">
+	  	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	  	<context:exclude-filter type="annotation" expression="javax.persistence.Entity"/>
+	</context:component-scan>
+</beans>

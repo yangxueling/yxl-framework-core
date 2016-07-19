@@ -1,0 +1,18 @@
+#registry address
+dubbo.registry.address=zookeeper://127.0.0.1:2181
+
+#dubbo host
+dubbo.protocol.host=127.0.0.1
+
+#port
+dubbo.protocol.port=22201
+
+#application name
+dubbo.application.name=ql_framework1_code
+
+#version
+dubbo.version=1.0
+
+#filter
+dubbo.provider.filter=DynamicDataSourceProviderFilter,HibernateTransactionFilter
+dubbo.consumer.filter=DynamicDataSourceConsumerFilter

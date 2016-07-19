@@ -1,0 +1,4 @@
+格式化时间：
+	<%@ taglib prefix="ql" uri="http://www.xy.com/yxl" %>
+	时间差：(value传入毫秒)
+	<ql:formatDate type="duration" value="111"/>

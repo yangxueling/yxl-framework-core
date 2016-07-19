@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- Control层数据校验管理器 -->
+    <bean id="controlValidationAspect" class="com.ql.validation.ControlValidationAspect"/>
+    <!-- Control层数据校验AOP配置 -->
+    <aop:config>
+    	<!-- add方法 -->
+        <aop:aspect ref="controlValidationAspect">
+            <aop:pointcut id="controlAddValidation" expression="execution(* *..*Control.add(..))"/>
+            <aop:around pointcut-ref="controlAddValidation" method="add"/>
+        </aop:aspect>
+        
+        <!-- update方法 -->
+        <aop:aspect ref="controlValidationAspect">
+            <aop:pointcut id="controlUpdateValidation" expression="execution(* *..*Control.update(..))"/>
+            <aop:around pointcut-ref="controlUpdateValidation" method="update"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

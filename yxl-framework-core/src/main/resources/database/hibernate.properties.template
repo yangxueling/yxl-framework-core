@@ -1,0 +1,16 @@
+#entity package
+packagesToScan=**.entity
+
+#sql
+hibernate.show_sql=true
+hibernate.format_sql=true
+
+#hibernateProperties
+hibernate.jdbc.fetch_size=100
+hibernate.jdbc.batch_size=50
+
+#second level cache
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.region.factory_class=com.ql.util.hibernate.redis.CacheRegionFactory
+#hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory

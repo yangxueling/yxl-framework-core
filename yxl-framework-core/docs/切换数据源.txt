@@ -1,0 +1,11 @@
+1.自动切换数据源
+	（确定工程中存在Control层，否则无效）
+	创建一个DataSourceBean，放置到用户HttpSession：
+	DataSourceBean dataSourceBean = new DataSourceBean("jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8", "root", "admin01");
+	getSession().setAttribute(DynamicDataSource.DATA_SOURCE_HTTP_SESSION_KEY, dataSourceBean);
+	
+	
+2.手动切换数据源
+	（确定工程中存在Dao层，否则无效）
+	DataSourceBean dataSourceBean = new DataSourceBean("jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8", "root", "admin01");
+	DynamicDataSource.active(dataSourceBean);

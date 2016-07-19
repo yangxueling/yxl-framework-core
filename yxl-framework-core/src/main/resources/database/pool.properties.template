@@ -1,0 +1,13 @@
+#database pool config
+pool.autoCommitOnClose=true
+pool.initialPoolSize=5
+pool.minPoolSize=5
+pool.maxPoolSize=10
+pool.checkoutTimeout=60000
+pool.acquireRetryDelay=500
+pool.acquireIncrement=5
+pool.maxIdleTime=60
+pool.maxIdleTimeExcessConnections=30
+pool.idleConnectionTestPeriod=60
+pool.numHelperThreads=3
+pool.breakAfterAcquireFailure=false
